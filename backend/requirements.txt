@@ -1,0 +1,12 @@
+fastapi==0.115.0
+uvicorn[standard]==0.30.0
+python-multipart==0.0.9
+sqlalchemy==2.0.35
+httpx==0.28.0
+chromadb==0.6.3
+pymupdf==1.24.0
+python-dotenv==1.0.1
+pydantic==2.9.0
+pydantic-settings==2.5.0
+# Optional: only needed if using Claude (paid)
+# anthropic==0.39.0
