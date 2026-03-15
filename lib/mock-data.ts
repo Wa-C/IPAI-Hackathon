@@ -132,6 +132,24 @@ export const mockStudents: Student[] = [
   },
 ]
 
+// Mock Teachers
+export const mockTeachers = [
+  {
+    id: 'teacher-1',
+    name: 'Maria K.',
+    email: 'maria.k@hhg-berlin.de',
+    subject: 'English',
+    classes: ['class-1', 'class-2', 'class-3'],
+  },
+  {
+    id: 'teacher-2',
+    name: 'Thomas S.',
+    email: 'thomas.s@hhg-berlin.de',
+    subject: 'Science',
+    classes: ['class-4'],
+  },
+]
+
 // Mock Lessons
 export const mockLessons: Lesson[] = [
   {

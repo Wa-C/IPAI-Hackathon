@@ -89,7 +89,7 @@ export default function AdminIntegrations() {
       {/* Header */}
       <div>
         <h1 className="text-2xl font-semibold text-foreground">Integrations</h1>
-        <p className="text-muted-foreground">Connect EdCopilot with your existing school systems</p>
+        <p className="text-muted-foreground">Connect Knowunity with your existing school systems</p>
       </div>
 
       {/* Data Privacy Notice */}
@@ -100,7 +100,7 @@ export default function AdminIntegrations() {
             <div>
               <p className="font-medium text-foreground">Federated Data Privacy</p>
               <p className="text-sm text-muted-foreground mt-1">
-                All integrations use secure, encrypted connections. Student data remains within your jurisdiction and is never shared with third parties. EdCopilot follows GDPR and German data protection regulations.
+                All integrations use secure, encrypted connections. Student data remains within your jurisdiction and is never shared with third parties. Knowunity follows GDPR and German data protection regulations.
               </p>
             </div>
           </div>
@@ -115,7 +115,7 @@ export default function AdminIntegrations() {
             Connected Integrations
           </CardTitle>
           <CardDescription>
-            Active integrations syncing data with EdCopilot
+            Active integrations syncing data with Knowunity
           </CardDescription>
         </CardHeader>
         <CardContent className="space-y-3">
@@ -162,7 +162,7 @@ export default function AdminIntegrations() {
         <CardHeader>
           <CardTitle>Available Integrations</CardTitle>
           <CardDescription>
-            Connect additional systems to enhance EdCopilot
+            Connect additional systems to enhance Knowunity
           </CardDescription>
         </CardHeader>
         <CardContent className="space-y-3">

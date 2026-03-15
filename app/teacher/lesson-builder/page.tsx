@@ -25,9 +25,9 @@ const modeIcons: Record<LearningMode | 'mixed', React.ReactNode> = {
 }
 
 const modeColors: Record<LearningMode | 'mixed', string> = {
-  read: 'from-purple-500 to-indigo-500',
+  read: 'from-blue-500 to-indigo-500',
   play: 'from-cyan-500 to-blue-500',
-  watch: 'from-orange-500 to-red-500',
+  watch: 'from-indigo-500 to-blue-600',
   mixed: 'from-emerald-500 to-teal-500',
 }
 
@@ -47,7 +47,7 @@ function TaskCard({ task }: { task: Task }) {
         {task.generatedByAI && (
           <Badge 
             className="gap-1 text-white border-0 rounded-full"
-            style={{ background: 'linear-gradient(135deg, #7c3aed 0%, #6366f1 50%, #3b82f6 100%)' }}
+            style={{ background: 'linear-gradient(135deg, #0066FF 0%, #3b82f6 50%, #06b6d4 100%)' }}
           >
             <Sparkles className="h-3 w-3" />
             AI
@@ -107,7 +107,7 @@ export default function LessonBuilderPage() {
           <div className="flex items-center gap-3 mb-2">
             <div 
               className="p-2.5 rounded-xl shadow-lg"
-              style={{ background: 'linear-gradient(135deg, #7c3aed 0%, #6366f1 50%, #3b82f6 100%)' }}
+              style={{ background: 'linear-gradient(135deg, #0066FF 0%, #3b82f6 50%, #06b6d4 100%)' }}
             >
               <Brain className="h-6 w-6 text-white" />
             </div>
@@ -123,7 +123,7 @@ export default function LessonBuilderPage() {
             </Button>
             <Button 
               className="gap-2 text-white border-0 rounded-xl shadow-lg hover:opacity-90"
-              style={{ background: 'linear-gradient(135deg, #7c3aed 0%, #6366f1 50%, #3b82f6 100%)' }}
+              style={{ background: 'linear-gradient(135deg, #0066FF 0%, #3b82f6 50%, #06b6d4 100%)' }}
             >
               <CheckCircle2 className="h-4 w-4" />
               Publish
@@ -322,7 +322,7 @@ export default function LessonBuilderPage() {
                 <Button 
                   onClick={handleGenerate} 
                   className="w-full h-14 gap-2 text-white border-0 rounded-xl shadow-lg hover:shadow-xl hover:opacity-90 transition-all text-base"
-                  style={{ background: 'linear-gradient(135deg, #7c3aed 0%, #6366f1 50%, #3b82f6 100%)' }}
+                  style={{ background: 'linear-gradient(135deg, #0066FF 0%, #3b82f6 50%, #06b6d4 100%)' }}
                 >
                   <Sparkles className="h-5 w-5" />
                   Generate Differentiated Lesson
@@ -340,7 +340,7 @@ export default function LessonBuilderPage() {
               <CardTitle className="flex items-center gap-2">
                 <div 
                   className="p-2 rounded-xl shadow-md"
-                  style={{ background: 'linear-gradient(135deg, #7c3aed 0%, #6366f1 50%, #3b82f6 100%)' }}
+                  style={{ background: 'linear-gradient(135deg, #0066FF 0%, #3b82f6 50%, #06b6d4 100%)' }}
                 >
                   <Sparkles className="h-4 w-4 text-white" />
                 </div>
@@ -383,7 +383,7 @@ export default function LessonBuilderPage() {
                       </div>
                       <div className="grid gap-4 sm:grid-cols-3">
                         {[
-                          { label: 'Struggling', count: 3, color: 'from-orange-500 to-red-500' },
+                          { label: 'Struggling', count: 3, color: 'from-blue-400 to-indigo-500' },
                           { label: 'On-track', count: 2, color: 'from-cyan-500 to-blue-500' },
                           { label: 'Advanced', count: 3, color: 'from-emerald-500 to-teal-500' },
                         ].map((level) => (
@@ -400,7 +400,7 @@ export default function LessonBuilderPage() {
                   </TabsContent>
 
                   <TabsContent value="struggling" className="mt-6 space-y-4">
-                    <div className="rounded-xl bg-gradient-to-r from-orange-500/10 to-transparent p-4 border border-orange-500/20">
+                    <div className="rounded-xl bg-gradient-to-r from-blue-500/10 to-transparent p-4 border border-blue-500/20">
                       <p className="text-sm text-muted-foreground">
                         <strong className="text-foreground">Rationale:</strong> Simpler vocabulary, more visual scaffolding, and interactive elements to support comprehension.
                       </p>
@@ -440,7 +440,7 @@ export default function LessonBuilderPage() {
             <div className="flex flex-col sm:flex-row gap-3">
               <Button 
                 className="flex-1 gap-2 h-12 text-white border-0 rounded-xl shadow-lg hover:opacity-90"
-                style={{ background: 'linear-gradient(135deg, #7c3aed 0%, #6366f1 50%, #3b82f6 100%)' }}
+                style={{ background: 'linear-gradient(135deg, #0066FF 0%, #3b82f6 50%, #06b6d4 100%)' }}
               >
                 <Save className="h-4 w-4" />
                 Save & Assign Later

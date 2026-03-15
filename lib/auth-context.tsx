@@ -11,7 +11,7 @@ const mockOrganisations: Organisation[] = [
     name: 'Heinrich-Heine-Gymnasium Berlin',
     code: 'HHG-BER-2024',
     apiKey: 'ecdp_live_xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx',
-    webhookUrl: 'https://hhg-berlin.de/api/edcopilot/webhook',
+    webhookUrl: 'https://hhg-berlin.de/api/copa/webhook',
     settings: {
       allowLmsIntegration: true,
       allowThirdPartyContent: true,
@@ -31,7 +31,7 @@ const mockOrganisations: Organisation[] = [
     name: 'Grundschule am Park Hamburg',
     code: 'GAP-HH-2024',
     apiKey: 'ecdp_live_yyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyy',
-    webhookUrl: 'https://gap-hamburg.de/api/edcopilot/webhook',
+    webhookUrl: 'https://gap-hamburg.de/api/copa/webhook',
     settings: {
       allowLmsIntegration: true,
       allowThirdPartyContent: false,

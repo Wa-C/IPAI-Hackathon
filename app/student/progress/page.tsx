@@ -27,8 +27,8 @@ const weeklyProgress = [
 ]
 
 const subjectProgress = [
-  { subject: 'English', progress: 78, lessons: 12, color: '#7c3aed' },
-  { subject: 'Mathematics', progress: 65, lessons: 8, color: '#3b82f6' },
+  { subject: 'English', progress: 78, lessons: 12, color: '#0066FF' },
+  { subject: 'Mathematics', progress: 65, lessons: 8, color: '#22d3ee' },
   { subject: 'Science', progress: 82, lessons: 10, color: '#22c55e' },
   { subject: 'History', progress: 45, lessons: 5, color: '#f97316' },
 ]
@@ -55,13 +55,13 @@ export default function StudentProgress() {
       {/* Stats Overview */}
       <div className="grid gap-4 md:grid-cols-4">
         {[
-          { label: 'Weekly Minutes', value: `${totalMinutes}`, icon: Clock, change: '+12%', color: '#7c3aed' },
+          { label: 'Weekly Minutes', value: `${totalMinutes}`, icon: Clock, change: '+12%', color: '#0A1A3F' },
           { label: 'Lessons Completed', value: `${totalLessons}`, icon: BookOpen, change: '+5', color: '#3b82f6' },
-          { label: 'Current Streak', value: '7 days', icon: Flame, change: 'Best: 14', color: '#f97316' },
+          { label: 'Current Streak', value: '7 days', icon: Flame, change: 'Best: 14', color: '#0066FF' },
           { label: 'Total XP', value: '2,450', icon: Award, change: 'Level 8', color: '#22c55e' },
         ].map((stat) => (
-          <Card key={stat.label} className="border-0 shadow-lg">
-            <CardContent className="p-5">
+          <Card key={stat.label} className="border-0 shadow-[0_20px_50px_rgba(0,102,255,0.08)] rounded-[3rem] bg-white hover:scale-[1.02] transition-transform duration-300">
+            <CardContent className="p-6">
               <div className="flex items-start justify-between">
                 <div>
                   <p className="text-sm text-muted-foreground">{stat.label}</p>
@@ -80,10 +80,10 @@ export default function StudentProgress() {
         ))}
       </div>
 
-      <div className="grid gap-6 lg:grid-cols-2">
+      <div className="grid gap-6 lg:gap-8 lg:grid-cols-2">
         {/* Weekly Activity Chart */}
-        <Card className="border-0 shadow-lg">
-          <CardHeader>
+        <Card className="border-0 shadow-[0_20px_50px_rgba(0,102,255,0.08)] rounded-[3rem] bg-white hover:scale-[1.01] transition-transform duration-300">
+          <CardHeader className="pb-4 pt-8 px-8">
             <CardTitle className="flex items-center gap-2">
               <Calendar className="h-5 w-5 text-primary" />
               This Week
@@ -104,8 +104,8 @@ export default function StudentProgress() {
                           height: `${height}%`,
                           minHeight: '8px',
                           background: isToday 
-                            ? 'linear-gradient(135deg, #7c3aed 0%, #6366f1 50%, #3b82f6 100%)' 
-                            : day.minutes > 0 ? 'rgba(124, 58, 237, 0.4)' : 'rgba(124, 58, 237, 0.1)'
+                            ? 'linear-gradient(135deg, #0066FF 0%, #22d3ee 100%)' 
+                            : day.minutes > 0 ? 'rgba(0, 102, 255, 0.4)' : 'rgba(0, 102, 255, 0.1)'
                         }}
                       />
                     </div>
@@ -130,8 +130,8 @@ export default function StudentProgress() {
         </Card>
 
         {/* Subject Progress */}
-        <Card className="border-0 shadow-lg">
-          <CardHeader>
+        <Card className="border-0 shadow-[0_20px_50px_rgba(0,102,255,0.08)] rounded-[3rem] bg-white hover:scale-[1.01] transition-transform duration-300">
+          <CardHeader className="pb-4 pt-8 px-8">
             <CardTitle className="flex items-center gap-2">
               <BarChart3 className="h-5 w-5 text-primary" />
               Subject Progress
@@ -167,37 +167,30 @@ export default function StudentProgress() {
         </Card>
 
         {/* Recent Achievements */}
-        <Card className="border-0 shadow-lg lg:col-span-2">
-          <CardHeader>
+        <Card className="border-0 shadow-[0_20px_50px_rgba(0,102,255,0.08)] rounded-[3rem] bg-white lg:col-span-2">
+          <CardHeader className="pb-4 pt-8 px-8">
             <CardTitle className="flex items-center gap-2">
               <Trophy className="h-5 w-5 text-primary" />
               Recent Achievements
             </CardTitle>
             <CardDescription>Your latest accomplishments</CardDescription>
           </CardHeader>
-          <CardContent>
-            <div className="grid gap-4 md:grid-cols-3">
+            <div className="grid gap-4 md:grid-cols-3 px-8 pb-8">
               {recentAchievements.map((achievement) => (
                 <div 
                   key={achievement.id}
-                  className="p-4 rounded-2xl bg-secondary/50 hover:bg-secondary/80 transition-colors"
+                  className="p-5 rounded-[2.5rem] bg-white border border-blue-50 shadow-sm hover:shadow-md transition-all group"
                 >
-                  <div className="flex items-start gap-3">
-                    <div 
-                      className="p-2.5 rounded-xl shadow-md"
-                      style={{ background: 'linear-gradient(135deg, #7c3aed 0%, #6366f1 50%, #3b82f6 100%)' }}
-                    >
-                      <achievement.icon className="h-5 w-5 text-white" />
+                  <div className="flex items-start gap-4">
+                    <div className="p-3 rounded-full bg-[#0066FF]/10 shrink-0 group-hover:scale-110 transition-transform">
+                      <achievement.icon className="h-6 w-6 text-[#0066FF]" />
                     </div>
                     <div className="flex-1">
-                      <h4 className="font-semibold text-foreground">{achievement.name}</h4>
-                      <p className="text-xs text-muted-foreground mt-1">{achievement.description}</p>
-                      <div className="flex items-center justify-between mt-2">
-                        <span className="text-xs text-muted-foreground">{achievement.date}</span>
-                        <Badge 
-                          className="text-xs border-0"
-                          style={{ backgroundColor: 'rgba(249, 115, 22, 0.1)', color: '#f97316' }}
-                        >
+                      <h4 className="font-bold text-[#0A1A3F] text-base leading-tight">{achievement.name}</h4>
+                      <p className="text-xs text-muted-foreground mt-1.5">{achievement.description}</p>
+                      <div className="flex items-center justify-between mt-3">
+                        <span className="text-xs text-muted-foreground font-medium">{achievement.date}</span>
+                        <Badge className="text-sm font-bold border-0 bg-[#0066FF]/10 text-[#0066FF] px-3 py-1 shadow-sm">
                           +{achievement.xp} XP
                         </Badge>
                       </div>
@@ -206,20 +199,18 @@ export default function StudentProgress() {
                 </div>
               ))}
             </div>
-          </CardContent>
         </Card>
 
         {/* Goals */}
-        <Card className="border-0 shadow-lg lg:col-span-2">
-          <CardHeader>
+        <Card className="border-0 shadow-[0_20px_50px_rgba(0,102,255,0.08)] rounded-[3rem] bg-white lg:col-span-2">
+          <CardHeader className="pb-4 pt-8 px-8">
             <CardTitle className="flex items-center gap-2">
               <Target className="h-5 w-5 text-primary" />
               Weekly Goals
             </CardTitle>
             <CardDescription>Track your progress towards your goals</CardDescription>
           </CardHeader>
-          <CardContent>
-            <div className="grid gap-4 md:grid-cols-3">
+            <div className="grid gap-4 md:grid-cols-3 px-8 pb-8">
               {[
                 { label: 'Complete 15 lessons', current: 12, target: 15, unit: 'lessons' },
                 { label: 'Study for 3 hours', current: 145, target: 180, unit: 'minutes' },
@@ -227,20 +218,19 @@ export default function StudentProgress() {
               ].map((goal) => {
                 const percent = Math.min((goal.current / goal.target) * 100, 100)
                 return (
-                  <div key={goal.label} className="p-4 rounded-2xl border border-border">
-                    <p className="text-sm font-medium text-foreground mb-3">{goal.label}</p>
-                    <Progress value={percent} className="h-2" />
-                    <div className="flex items-center justify-between mt-2">
-                      <span className="text-xs text-muted-foreground">
+                  <div key={goal.label} className="p-5 rounded-[2.5rem] bg-white border border-blue-50 shadow-sm hover:shadow-md transition-all group">
+                    <p className="font-bold text-[#0A1A3F] text-base mb-3 group-hover:text-[#0066FF] transition-colors">{goal.label}</p>
+                    <Progress value={percent} className="h-2.5 bg-[#0066FF]/10 shadow-inner [&>div]:bg-gradient-to-r [&>div]:from-[#0066FF] [&>div]:to-cyan-400" />
+                    <div className="flex items-center justify-between mt-3">
+                      <span className="text-sm text-slate-500 font-medium">
                         {goal.current} / {goal.target} {goal.unit}
                       </span>
-                      <span className="text-xs font-medium text-foreground">{Math.round(percent)}%</span>
+                      <span className="text-sm font-bold text-[#0A1A3F]">{Math.round(percent)}%</span>
                     </div>
                   </div>
                 )
               })}
             </div>
-          </CardContent>
         </Card>
       </div>
     </div>

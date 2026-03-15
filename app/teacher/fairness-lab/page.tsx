@@ -50,7 +50,7 @@ export default function FairnessLabPage() {
           Fairness Lab
         </h1>
         <p className="text-muted-foreground">
-          Test that EdCopilot{"'"}s AI suggestions do not change based on sensitive attributes alone
+          Test that Knowunity{"'"}s AI suggestions do not change based on sensitive attributes alone
         </p>
       </div>
 
@@ -209,7 +209,7 @@ export default function FairnessLabPage() {
               <CheckCircle2 className="h-4 w-4 text-success" />
               <AlertTitle className="text-success">Fair Treatment Confirmed</AlertTitle>
               <AlertDescription>
-                The AI suggestions are identical for both profiles, demonstrating that EdCopilot{"'"}s recommendations 
+                The AI suggestions are identical for both profiles, demonstrating that Knowunity{"'"}s recommendations 
                 do not change based on the selected sensitive attribute alone.
               </AlertDescription>
             </Alert>

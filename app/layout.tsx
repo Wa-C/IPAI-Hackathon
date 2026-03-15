@@ -10,9 +10,9 @@ const inter = Inter({
 })
 
 export const metadata: Metadata = {
-  title: 'EdCopilot - AI-Powered Learning for Every Student',
+  title: 'Knowunity - AI-Powered Learning for Every Student',
   description: 'A teacher-first AI copilot for schools with differentiated learning paths, bias scanning, and federated data privacy.',
-  generator: 'EdCopilot',
+  generator: 'Knowunity',
   keywords: ['education', 'AI', 'learning', 'teachers', 'students', 'differentiated learning', 'inclusive education'],
 }
 

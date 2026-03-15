@@ -14,7 +14,7 @@ import {
 } from '@/components/ui/dropdown-menu'
 import { Badge } from '@/components/ui/badge'
 import { useRouter } from 'next/navigation'
-import { Menu, Settings, LogOut, User, Globe, Bell, Sparkles } from 'lucide-react'
+import { Menu, Settings, LogOut, User, Globe, Bell, Sparkles, Flame } from 'lucide-react'
 
 interface TopbarProps {
   onMenuClick?: () => void
@@ -67,6 +67,14 @@ export function Topbar({ onMenuClick, showMenuButton = false }: TopbarProps) {
           </div>
         )}
 
+        {/* The Streak */}
+        {user?.role === 'teacher' && (
+          <div className="hidden sm:flex items-center gap-2 px-3 py-1.5 rounded-full bg-white border border-[#0066FF]/20 shadow-sm cursor-default hover:shadow-md transition-all">
+            <Flame className="w-4 h-4 text-[#0066FF] fill-[#0066FF]/20" />
+            <span className="font-bold text-sm text-[#1E293B]">7</span>
+          </div>
+        )}
+
         {/* Notifications */}
         <Button variant="ghost" size="icon" className="rounded-xl relative">
           <Bell className="h-5 w-5" />
@@ -103,11 +111,18 @@ export function Topbar({ onMenuClick, showMenuButton = false }: TopbarProps) {
                     {getInitials(user.name)}
                   </AvatarFallback>
                 </Avatar>
-                <div className="hidden sm:flex flex-col items-start">
+                <div className="hidden sm:flex flex-col items-start gap-1">
                   <span className="text-sm font-semibold text-foreground">{user.name}</span>
-                  <Badge variant="secondary" className="text-xs h-5 rounded-full px-2">
-                    {roleLabel}
-                  </Badge>
+                  <div className="flex items-center gap-2">
+                    <Badge variant="secondary" className="text-[10px] h-5 rounded-full px-2">
+                      {roleLabel}
+                    </Badge>
+                    {user.role === 'teacher' && (
+                      <Badge className="text-[10px] h-5 rounded-full px-2 bg-[#1E293B] text-[#0066FF] hover:bg-[#1E293B] border-0">
+                        Level 4 Master
+                      </Badge>
+                    )}
+                  </div>
                 </div>
               </Button>
             </DropdownMenuTrigger>

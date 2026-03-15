@@ -1,4 +1,4 @@
-// EdCopilot Core Types
+// COPA Core Types
 
 export type UserRole = 'teacher' | 'student' | 'admin'
 

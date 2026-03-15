@@ -69,15 +69,15 @@ function Sidebar({ items, className }: { items: NavItem[]; className?: string })
             key={item.href}
             href={item.href}
             className={cn(
-              'flex items-center gap-3 rounded-xl px-4 py-3 text-sm font-medium transition-all duration-200',
-              'hover:bg-sidebar-accent hover:text-sidebar-accent-foreground hover:scale-[1.02]',
-              'focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring',
+              'flex items-center gap-3 rounded-[1.5rem] px-5 py-3.5 text-base transition-all duration-300',
+              'hover:bg-white/5 hover:text-white hover:scale-[1.02]',
+              'focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#0066FF]',
               isActive
-                ? 'gradient-primary text-white shadow-md'
-                : 'text-sidebar-foreground'
+                ? 'bg-[#0066FF] text-white shadow-[0_0_20px_rgba(0,102,255,0.4)] font-bold'
+                : 'text-[#94A3B8] font-medium'
             )}
           >
-            <span className={cn(isActive ? 'text-white' : 'text-muted-foreground')}>
+            <span className={cn(isActive ? 'text-white' : 'text-[#94A3B8] transition-colors group-hover:text-white')}>
               {item.icon}
             </span>
             <span className="flex-1">{item.label}</span>
@@ -122,21 +122,23 @@ export function AppShell({ children }: AppShellProps) {
       
       <div className="flex flex-1">
         {/* Desktop Sidebar */}
-        <aside className="hidden lg:flex w-64 flex-col border-r border-sidebar-border bg-sidebar/50 backdrop-blur-sm">
+        <aside className="hidden lg:flex w-64 flex-col border-r-0 bg-[#1E293B] text-[#94A3B8] z-10 shadow-[20px_0_50px_rgba(30,41,59,0.1)] relative">
           <Sidebar items={navItems} />
           
           {/* Pro upgrade card */}
           {user?.role === 'teacher' && (
-            <div className="mt-auto p-4">
-              <div className="rounded-2xl gradient-primary p-4 text-white">
-                <div className="flex items-center gap-2 mb-2">
-                  <Zap className="h-5 w-5" />
-                  <span className="font-semibold text-sm">Go Pro</span>
+            <div className="mt-auto p-6">
+              <div className="rounded-[2.5rem] bg-white/5 border border-white/10 p-6 text-white shadow-[0_8px_30px_rgba(30,41,59,0.2)]">
+                <div className="flex items-center gap-3 mb-3">
+                  <div className="p-2 rounded-xl bg-[#0066FF]/20">
+                    <Zap className="h-5 w-5 text-[#0066FF]" />
+                  </div>
+                  <span className="font-black text-lg">Go Pro</span>
                 </div>
                 <p className="text-xs text-white/80 mb-3">
                   Unlock unlimited AI generations and advanced analytics.
                 </p>
-                <button className="w-full py-2 rounded-xl bg-white/20 hover:bg-white/30 text-sm font-medium transition-colors">
+                <button className="w-full py-2 rounded-full bg-white/20 hover:bg-white/30 text-sm font-bold transition-colors shadow-sm">
                   Upgrade Now
                 </button>
               </div>
@@ -146,7 +148,7 @@ export function AppShell({ children }: AppShellProps) {
 
         {/* Mobile Sidebar */}
         <Sheet open={mobileMenuOpen} onOpenChange={setMobileMenuOpen}>
-          <SheetContent side="left" className="w-72 p-0 bg-sidebar">
+          <SheetContent side="left" className="w-72 p-0 bg-[#1E293B] border-r-0 text-[#94A3B8]">
             <div className="pt-12">
               <Sidebar items={navItems} />
             </div>

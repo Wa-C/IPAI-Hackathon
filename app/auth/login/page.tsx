@@ -18,7 +18,7 @@ import type { UserRole } from '@/lib/types'
 export default function LoginPage() {
   const router = useRouter()
   const { login, organisations, isLoading } = useAuth()
-  
+
   const [role, setRole] = useState<UserRole>('teacher')
   const [organisationId, setOrganisationId] = useState(organisations[0]?.id || '')
   const [orgCode, setOrgCode] = useState('')
@@ -35,9 +35,9 @@ export default function LoginPage() {
   return (
     <div className="min-h-screen flex">
       {/* Left Panel - Branding */}
-      <div 
+      <div
         className="hidden lg:flex lg:w-1/2 relative overflow-hidden"
-        style={{ background: 'linear-gradient(135deg, #7c3aed 0%, #6366f1 50%, #3b82f6 100%)' }}
+        style={{ background: 'linear-gradient(135deg, #1E293B 0%, #0066FF 100%)' }}
       >
         <div className="absolute inset-0">
           <div className="absolute top-1/4 left-1/4 w-64 h-64 rounded-full bg-white/10 blur-3xl" />
@@ -79,16 +79,16 @@ export default function LoginPage() {
 
           <Card className="border-0 shadow-2xl bg-card/50 backdrop-blur">
             <CardHeader className="text-center pb-2 space-y-4">
-              <div 
+              <div
                 className="mx-auto w-14 h-14 rounded-2xl flex items-center justify-center shadow-lg"
-                style={{ background: 'linear-gradient(135deg, #7c3aed 0%, #6366f1 50%, #3b82f6 100%)' }}
+                style={{ background: 'linear-gradient(135deg, #1E293B 0%, #0066FF 100%)' }}
               >
                 <Sparkles className="w-7 h-7 text-white" />
               </div>
               <CardTitle className="text-2xl font-bold">Welcome back</CardTitle>
-              <CardDescription>Sign in to your EdCopilot account</CardDescription>
+              <CardDescription>Sign in to your COPA account</CardDescription>
             </CardHeader>
-            
+
             <form onSubmit={handleSubmit}>
               <CardContent className="space-y-6">
                 {/* Role Selection */}
@@ -104,7 +104,7 @@ export default function LoginPage() {
                       value="teacher"
                       aria-label="Teacher"
                       className="flex items-center gap-2 h-14 rounded-xl border-2 data-[state=on]:text-white data-[state=on]:border-transparent"
-                      style={role === 'teacher' ? { background: 'linear-gradient(135deg, #7c3aed 0%, #6366f1 50%, #3b82f6 100%)' } : {}}
+                      style={role === 'teacher' ? { background: 'linear-gradient(135deg, #1E293B 0%, #0066FF 100%)' } : {}}
                     >
                       <BookOpen className="h-5 w-5" />
                       <span className="font-medium">Teacher</span>
@@ -113,7 +113,7 @@ export default function LoginPage() {
                       value="student"
                       aria-label="Student"
                       className="flex items-center gap-2 h-14 rounded-xl border-2 data-[state=on]:text-white data-[state=on]:border-transparent"
-                      style={role === 'student' ? { background: 'linear-gradient(135deg, #7c3aed 0%, #6366f1 50%, #3b82f6 100%)' } : {}}
+                      style={role === 'student' ? { background: 'linear-gradient(135deg, #1E293B 0%, #0066FF 100%)' } : {}}
                     >
                       <GraduationCap className="h-5 w-5" />
                       <span className="font-medium">Student</span>
@@ -203,10 +203,10 @@ export default function LoginPage() {
               </CardContent>
 
               <CardFooter className="flex flex-col gap-4">
-                <Button 
-                  type="submit" 
+                <Button
+                  type="submit"
                   className="w-full h-12 rounded-xl text-white border-0 shadow-lg hover:shadow-xl hover:opacity-90 transition-all" 
-                  style={{ background: 'linear-gradient(135deg, #7c3aed 0%, #6366f1 50%, #3b82f6 100%)' }}
+                  style={{ background: 'linear-gradient(135deg, #1E293B 0%, #0066FF 100%)' }}
                   size="lg" 
                   disabled={isLoading}
                 >

@@ -282,7 +282,7 @@ export default function AdminSettings() {
                 <Textarea
                   id="welcome-message"
                   placeholder="Enter a welcome message for your users..."
-                  defaultValue="Welcome to EdCopilot! We are excited to have you join our learning community."
+                  defaultValue="Welcome to Knowunity! We are excited to have you join our learning community."
                 />
               </div>
             </CardContent>

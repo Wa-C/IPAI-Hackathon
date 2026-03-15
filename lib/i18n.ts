@@ -1,4 +1,4 @@
-// EdCopilot Internationalization
+// Knowunity Internationalization
 // Centralized copy for easy language swapping
 
 export type Language = 'en' | 'de'
@@ -29,7 +29,7 @@ export const translations = {
     landing: {
       hero: {
         title: 'AI-Powered Learning, Personalised for Every Student',
-        subtitle: 'EdCopilot helps teachers create differentiated lessons and inclusive materials while keeping student data safe and secure.',
+        subtitle: 'Knowunity helps teachers create differentiated lessons and inclusive materials while keeping student data safe and secure.',
         cta: 'Log in',
         secondaryCta: 'Book a Demo',
       },
@@ -60,7 +60,7 @@ export const translations = {
       howItWorks: {
         title: 'How It Works',
         steps: [
-          { title: 'Connect', description: 'Link EdCopilot to your school system' },
+          { title: 'Connect', description: 'Link Knowunity to your school system' },
           { title: 'Create', description: 'Build lessons with AI assistance' },
           { title: 'Personalise', description: 'Students learn in their preferred style' },
         ],
@@ -101,7 +101,7 @@ export const translations = {
         createLesson: 'Create Lesson',
         scanMaterial: 'Scan Material',
         assignPath: 'Assign Adaptive Path',
-        dataPrivacy: "Your students' detailed data stays on this school server. EdCopilot only uses anonymised patterns.",
+        dataPrivacy: "Your students' detailed data stays on this school server. Knowunity only uses anonymised patterns.",
       },
       lessonBuilder: {
         title: 'Lesson Builder',
@@ -215,7 +215,7 @@ export const translations = {
         lmsIntegration: 'Allow LMS Integration',
         thirdPartyContent: 'Allow 3rd Party Content Providers',
         federatedLearning: 'Enable Federated Learning Updates',
-        dataPrivacy: 'Data stays in your organisation. Only aggregated, anonymised model updates are sent to EdCopilot servers.',
+        dataPrivacy: 'Data stays in your organisation. Only aggregated, anonymised model updates are sent to Knowunity servers.',
         federatedCard: {
           title: 'Federated Learning',
           sendSignals: 'Send anonymised learning signals',
@@ -227,7 +227,7 @@ export const translations = {
     // Fairness Lab
     fairnessLab: {
       title: 'Fairness Lab',
-      description: 'Use this lab to verify that EdCopilot\'s suggestions do not change based on sensitive attributes alone.',
+      description: 'Use this lab to verify that Knowunity\'s suggestions do not change based on sensitive attributes alone.',
       profileA: 'Student Profile A',
       profileB: 'Student Profile B',
       name: 'Display Name',
@@ -263,7 +263,7 @@ export const translations = {
     landing: {
       hero: {
         title: 'KI-gestütztes Lernen, personalisiert für jeden Schüler',
-        subtitle: 'EdCopilot hilft Lehrkräften, differenzierte Unterrichtsstunden und inklusive Materialien zu erstellen – bei voller Datensicherheit.',
+        subtitle: 'Knowunity hilft Lehrkräften, differenzierte Unterrichtsstunden und inklusive Materialien zu erstellen – bei voller Datensicherheit.',
         cta: 'Anmelden',
         secondaryCta: 'Demo buchen',
       },
@@ -294,7 +294,7 @@ export const translations = {
       howItWorks: {
         title: 'So funktioniert es',
         steps: [
-          { title: 'Verbinden', description: 'EdCopilot mit Ihrem Schulsystem verknüpfen' },
+          { title: 'Verbinden', description: 'Knowunity mit Ihrem Schulsystem verknüpfen' },
           { title: 'Erstellen', description: 'Unterricht mit KI-Unterstützung gestalten' },
           { title: 'Personalisieren', description: 'Schüler lernen in ihrem bevorzugten Stil' },
         ],
@@ -335,7 +335,7 @@ export const translations = {
         createLesson: 'Unterricht erstellen',
         scanMaterial: 'Material scannen',
         assignPath: 'Adaptiven Pfad zuweisen',
-        dataPrivacy: 'Die detaillierten Daten Ihrer Schüler:innen bleiben auf diesem Schulserver. EdCopilot verwendet nur anonymisierte Muster.',
+        dataPrivacy: 'Die detaillierten Daten Ihrer Schüler:innen bleiben auf diesem Schulserver. Knowunity verwendet nur anonymisierte Muster.',
       },
       lessonBuilder: {
         title: 'Unterrichtsplaner',
@@ -449,7 +449,7 @@ export const translations = {
         lmsIntegration: 'LMS-Integration erlauben',
         thirdPartyContent: 'Drittanbieter-Inhalte erlauben',
         federatedLearning: 'Föderierte Lernaktualisierungen aktivieren',
-        dataPrivacy: 'Daten bleiben in Ihrer Organisation. Nur aggregierte, anonymisierte Modellaktualisierungen werden an EdCopilot-Server gesendet.',
+        dataPrivacy: 'Daten bleiben in Ihrer Organisation. Nur aggregierte, anonymisierte Modellaktualisierungen werden an Knowunity-Server gesendet.',
         federatedCard: {
           title: 'Föderiertes Lernen',
           sendSignals: 'Anonymisierte Lernsignale senden',
@@ -461,7 +461,7 @@ export const translations = {
     // Fairness Lab
     fairnessLab: {
       title: 'Fairness-Labor',
-      description: 'Verwenden Sie dieses Labor, um zu überprüfen, dass die Vorschläge von EdCopilot sich nicht aufgrund sensibler Attribute ändern.',
+      description: 'Verwenden Sie dieses Labor, um zu überprüfen, dass die Vorschläge von Knowunity sich nicht aufgrund sensibler Attribute ändern.',
       profileA: 'Schülerprofil A',
       profileB: 'Schülerprofil B',
       name: 'Anzeigename',
@@ -474,9 +474,9 @@ export const translations = {
   },
 } as const
 
-export type Translations = typeof translations.en
+export type Translations = typeof translations.en | typeof translations.de
 
-export function useTranslations(lang: Language = 'en'): Translations {
+export function useTranslations(lang: Language = 'en'): typeof translations.en | typeof translations.de {
   return translations[lang]
 }
 

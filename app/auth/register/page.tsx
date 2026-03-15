@@ -36,7 +36,7 @@ export default function RegisterPage() {
   return (
     <div className="min-h-screen flex">
       {/* Left Panel - Branding */}
-      <div className="hidden lg:flex lg:w-1/2 gradient-primary relative overflow-hidden">
+      <div className="hidden lg:flex lg:w-1/2 relative overflow-hidden" style={{ background: 'linear-gradient(135deg, #1E293B 0%, #0066FF 100%)' }}>
         <div className="absolute inset-0">
           <div className="absolute top-1/4 left-1/4 w-64 h-64 rounded-full bg-white/10 blur-3xl" />
           <div className="absolute bottom-1/4 right-1/4 w-48 h-48 rounded-full bg-white/10 blur-3xl" />
@@ -93,11 +93,11 @@ export default function RegisterPage() {
 
           <Card className="border-0 shadow-2xl bg-card/50 backdrop-blur">
             <CardHeader className="text-center pb-2 space-y-4">
-              <div className="mx-auto w-14 h-14 rounded-2xl gradient-primary flex items-center justify-center shadow-lg">
+              <div className="mx-auto w-14 h-14 rounded-2xl flex items-center justify-center shadow-lg" style={{ background: 'linear-gradient(135deg, #1E293B 0%, #0066FF 100%)' }}>
                 <Users className="w-7 h-7 text-white" />
               </div>
               <CardTitle className="text-2xl font-bold">Create your account</CardTitle>
-              <CardDescription>Join EdCopilot to start personalized learning</CardDescription>
+              <CardDescription>Join COPA to start personalized learning</CardDescription>
             </CardHeader>
             
             <form onSubmit={handleSubmit}>
@@ -114,7 +114,8 @@ export default function RegisterPage() {
                     <ToggleGroupItem
                       value="teacher"
                       aria-label="Teacher"
-                      className="flex items-center gap-2 h-14 rounded-xl border-2 data-[state=on]:gradient-primary data-[state=on]:text-white data-[state=on]:border-transparent"
+                      className="flex items-center gap-2 h-14 rounded-xl border-2 data-[state=on]:text-white data-[state=on]:border-transparent"
+                      style={role === 'teacher' ? { background: 'linear-gradient(135deg, #1E293B 0%, #0066FF 100%)' } : {}}
                     >
                       <BookOpen className="h-5 w-5" />
                       <span className="font-medium">Teacher</span>
@@ -122,7 +123,8 @@ export default function RegisterPage() {
                     <ToggleGroupItem
                       value="student"
                       aria-label="Student"
-                      className="flex items-center gap-2 h-14 rounded-xl border-2 data-[state=on]:gradient-primary data-[state=on]:text-white data-[state=on]:border-transparent"
+                      className="flex items-center gap-2 h-14 rounded-xl border-2 data-[state=on]:text-white data-[state=on]:border-transparent"
+                      style={role === 'student' ? { background: 'linear-gradient(135deg, #1E293B 0%, #0066FF 100%)' } : {}}
                     >
                       <GraduationCap className="h-5 w-5" />
                       <span className="font-medium">Student</span>
@@ -236,7 +238,8 @@ export default function RegisterPage() {
               <CardFooter className="flex flex-col gap-4">
                 <Button 
                   type="submit" 
-                  className="w-full h-12 rounded-xl gradient-primary text-white border-0 shadow-lg hover:shadow-xl transition-all" 
+                  className="w-full h-12 rounded-xl text-white border-0 shadow-lg hover:shadow-xl transition-all" 
+                  style={{ background: 'linear-gradient(135deg, #1E293B 0%, #0066FF 100%)' }} 
                   size="lg" 
                   disabled={isLoading}
                 >
