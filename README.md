@@ -27,7 +27,8 @@ All training happens locally at each school. Only model weights are shared — n
 | Backend | FastAPI, Python, Supabase |
 | AI/ML | PyTorch, Hugging Face Transformers, PEFT (LoRA), Flower (Federated Learning) |
 | Database | Supabase (PostgreSQL), ChromaDB (Vector Store) |
-| Chatbot | RAG pipeline with LLM integration |
+| LLM | Mistral AI (tailored for education) |
+| Chatbot | RAG pipeline with Mistral AI integration |
 
 ## Features
 
@@ -104,7 +105,20 @@ API runs at [http://localhost:8000](http://localhost:8000)
 | **Teacher** | Lesson builder, bias scanner, fairness lab, analytics |
 | **Admin** | FL model management, pipelines, push to production |
 
-## Fine-Tuned Models
+## AI Models
+
+### General LLM - Mistral AI
+
+COPA uses **Mistral AI** as its general-purpose language model, tailored specifically for the education system. Mistral powers:
+
+- **Lesson content generation** — Creating differentiated learning materials aligned to curriculum standards
+- **Bias scanning** — Detecting cultural, gender, and accessibility bias in teaching materials
+- **Chatbot tutor** — RAG-powered conversational AI that helps students with Q&A, exercises, and explanations
+- **Content differentiation** — Adapting materials for struggling, on-track, and advanced learners
+
+The Mistral integration runs through the FastAPI backend and is combined with a ChromaDB-based RAG pipeline for context-aware, document-grounded responses.
+
+### Fine-Tuned Models
 
 | Model | Type | Params | Method |
 |-------|------|--------|--------|
